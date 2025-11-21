@@ -1,3 +1,4 @@
+// ---------- data ----------
 const archive = [
   {
     col1: "eve+testosterone=adam",
@@ -25,9 +26,37 @@ const archive = [
     col3: "p5.js",
     col4: "web-based, typography",
     col5: "in-progress",
-    description: `<p>a p5.js installation reflecting on digital structures and social hierarchies through interactive code and visual forms. the piece engages participants in a dynamic exploration of digital spaces.</p>
-                  <p>references here</p>`,
-    images: ["images/es1.png", "images/es2.png"]
+    description: `<p>#surveillancecore pt.01 is an interactive installation made in collaboration with <a href="https://www.linkedin.com/in/hannah-ogawa-9931ab303/" target="_blank" style="color: blue; text-decoration: underline;"><u>hannah ogawa</u></a>. the camera is coded to track people's faces and detect their emotions. by transforming personal interactions into data, the installation prompts viewers to reflect on surveillance technology and its capability to blur the boundaries between connection and control. it invites critical examination of privacy, agency, and the ethics of observation in the digital age.</p>
+                  <p>&nbsp;</p>
+                  <p>//references</p>
+                  <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
+                  <p>skepta, <a href="https://www.youtube.com/watch?v=rC-J4x-oTto" target="_blank" style="color: blue; text-decoration: underline;">#skeptacore pt.2</a>, 2023</p>
+                  <p>ryoji ikeda, <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" style="color: blue; text-decoration: underline;">datamatics</a>, 2006</p>
+                  <p>transwhite studio, <a href="https://tokyotypedirectorsclub.org/en/award/2024_tdc_03/" target="_blank" style="color: blue; text-decoration: underline;">aranya plein air</a>, 2023</p>
+                  <p>&nbsp;</p>`,
+    images: [
+      "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
+      "images/image.png"
+    ]
+  },
+  {
+    col1: "#surveillancecore pt.01",
+    col2: "2025",
+    col3: "p5.js",
+    col4: "interactive installation",
+    col5: "completed",
+    description: `<p>#surveillancecore pt.01 is an interactive installation made in collaboration with <a href="https://www.linkedin.com/in/hannah-ogawa-9931ab303/" target="_blank" style="color: blue; text-decoration: underline;"><u>hannah ogawa</u></a>. the camera is coded to track people's faces and detect their emotions. by transforming personal interactions into data, the installation prompts viewers to reflect on surveillance technology and its capability to blur the boundaries between connection and control. it invites critical examination of privacy, agency, and the ethics of observation in the digital age.</p>
+                  <p>&nbsp;</p>
+                  <p>//references</p>
+                  <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
+                  <p>skepta, <a href="https://www.youtube.com/watch?v=rC-J4x-oTto" target="_blank" style="color: blue; text-decoration: underline;">#skeptacore pt.2</a>, 2023</p>
+                  <p>ryoji ikeda, <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" style="color: blue; text-decoration: underline;">datamatics</a>, 2006</p>
+                  <p>transwhite studio, <a href="https://tokyotypedirectorsclub.org/en/award/2024_tdc_03/" target="_blank" style="color: blue; text-decoration: underline;">aranya plein air</a>, 2023</p>
+                  <p>&nbsp;</p>`,
+    images: [
+      "iframe:https://kilianhoppner.github.io/surveillancecore-pt.1/",
+      "images/surveillancecorept.01/surveillancecorept.01.png"
+    ]
   },
   {
     col1: "the weather room",
@@ -36,17 +65,87 @@ const archive = [
     col4: "interactive installation",
     col5: "completed",
     description: `<p>the weather room is an installation created in collaboration with <a href="https://www.isobellemccall.com/" target="_blank" style="color: blue; text-decoration: underline;">isobelle mccall</a> as part of an interactive media course at the university of melbourne. in the space, viewers can influence the ambience through their presence. projected light changes colour from dark blue tones to warm orange hues based on how loud it gets in the room. this creates an audio-visual representation of the human experience with the environment, inviting a deep reflection of our relationship with nature.</p>
-                  <p>references here</p>`,
+                  <p>&nbsp;</p>
+                  <p>//references</p>
+                  <p>olafur eliasson, <a href="https://olafureliasson.net/artwork/the-weather-project-2003/" target="_blank" style="color: blue; text-decoration: underline;">the weather project</a>, 2003</p>
+                  <p>james turrell, <a href="https://www.pacegallery.com/exhibitions/james-turrell-elemental/" target="_blank" style="color: blue; text-decoration: underline;">elemental</a>, 2022</p>
+                  <p>julinka ebhardt, francesco tacchini, will yates-johnson, <a href="https://vimeo.com/87979136" target="_blank" style="color: blue; text-decoration: underline;">space replay</a>, 2014</p>
+                  <p>john warwicker, <a href="https://www.johnwarwicker.com/sony-connected-identity-1/ez6vgi16gtvobpccjsmq013z90rru2" target="_blank" style="color: blue; text-decoration: underline;">sony connected identity</a>, 2001</p>
+                  <p>&nbsp;</p>`,
     images: ["images/theweatherroom/theweatherroom01.png", "images/theweatherroom/theweatherroom02.png"]
   }
 ];
+
+// ---------- DOM refs & state ----------
 const tableBody = document.getElementById('tableBody');
 const toggleAllBtn = document.getElementById('toggleAll');
 let allExpanded = false;
 const expandedStates = Object.fromEntries(archive.map(e => [e.col1, false]));
 
+// ---------- helper: create media cell ----------
+function createMediaCell(mediaValue, idx) {
+  const td = document.createElement('td');
+  td.style.verticalAlign = 'top';
+  const wrapper = document.createElement('div');
+  wrapper.className = 'img-container';
+  td.appendChild(wrapper);
+
+  if (!mediaValue) {
+    const img = document.createElement('img');
+    img.className = 'thumb-img';
+    img.alt = `project image ${idx}`;
+    img.src = 'images/image.png';
+    wrapper.appendChild(img);
+    return td;
+  }
+
+  if (typeof mediaValue === 'string' && mediaValue.startsWith('iframe:')) {
+    const url = mediaValue.slice('iframe:'.length);
+
+    // responsive wrapper (intrinsic ratio)
+    const ar = document.createElement('div');
+    ar.style.position = 'relative';
+    ar.style.width = '100%';
+    ar.style.maxWidth = '800px';
+    ar.style.paddingTop = '65.125%'; // 521 / 800 * 100%
+    ar.style.overflow = 'hidden';
+
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.title = `embedded-${idx}`;
+    iframe.frameBorder = '0';
+    iframe.loading = 'lazy';
+    iframe.allow = 'camera; microphone; fullscreen; autoplay';
+    iframe.allowFullscreen = true;
+    iframe.style.position = 'absolute';
+    iframe.style.top = '0';
+    iframe.style.left = '0';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = '0';
+
+    ar.appendChild(iframe);
+    wrapper.appendChild(ar);
+    return td;
+  }
+
+  if (typeof mediaValue === 'string' && mediaValue.trim().startsWith('<iframe')) {
+    wrapper.innerHTML = mediaValue;
+    return td;
+  }
+
+  const img = document.createElement('img');
+  img.className = 'thumb-img';
+  img.alt = `project image ${idx}`;
+  img.src = mediaValue;
+  wrapper.appendChild(img);
+  return td;
+}
+
+// ---------- render table ----------
 function renderTable() {
   tableBody.innerHTML = '';
+
   archive.forEach(entry => {
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -70,29 +169,26 @@ function renderTable() {
     descRow.className = 'description-row';
     descRow.id = `desc-${entry.col1}`;
 
-    // Use entry.images[0] and entry.images[1] for the two image cells
-    descRow.innerHTML = `
-      <td></td>
-      <td class="desc-cell" colspan="3">
-        ${entry.description}
-      </td>
-      <td>
-        <div class="img-container">
-          <img src="${entry.images[0]}" class="thumb-img" alt="project image 1">
-        </div>
-      </td>
-      <td>
-        <div class="img-container">
-          <img src="${entry.images[1]}" class="thumb-img" alt="project image 2">
-        </div>
-      </td>
-    `;
+    descRow.appendChild(document.createElement('td'));
+
+    const descTd = document.createElement('td');
+    descTd.className = 'desc-cell';
+    descTd.colSpan = 3;
+    descTd.innerHTML = entry.description || '';
+    descRow.appendChild(descTd);
+
+    const m0 = createMediaCell(entry.images?.[0], 1);
+    const m1 = createMediaCell(entry.images?.[1], 2);
+    descRow.appendChild(m0);
+    descRow.appendChild(m1);
 
     tableBody.appendChild(descRow);
   });
+
   updateRows();
 }
 
+// ---------- update rows ----------
 function updateRows() {
   archive.forEach(entry => {
     const descRow = document.getElementById(`desc-${entry.col1}`);
@@ -104,10 +200,12 @@ function updateRows() {
   toggleAllBtn.textContent = allExpanded ? '—' : '+';
 }
 
+// ---------- toggle all ----------
 toggleAllBtn.addEventListener('click', () => {
   allExpanded = !allExpanded;
   archive.forEach(e => expandedStates[e.col1] = allExpanded);
   updateRows();
 });
 
+// initial render
 renderTable();
