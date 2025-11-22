@@ -1,18 +1,15 @@
 // ---------- data ----------
 const archive = [
   {
-    col1: "eve+testosterone=adam",
+    col1: "eve+testosterone=adam (datalove)",
     col2: "2025",
-    col3: "audio/visual, p5.js",
-    col4: "letter-press",
+    col3: "p5.js, writing",
+    col4: "web-based, publication",
     col5: "in-progress",
     description: `<p>project description here</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
-                  <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
-                  <p>skepta, <a href="https://www.youtube.com/watch?v=rC-J4x-oTto" target="_blank" style="color: blue; text-decoration: underline;">#skeptacore pt.2</a>, 2023</p>
-                  <p>ryoji ikeda, <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" style="color: blue; text-decoration: underline;">datamatics</a>, 2006</p>
-                  <p>transwhite studio, <a href="https://tokyotypedirectorsclub.org/en/award/2024_tdc_03/" target="_blank" style="color: blue; text-decoration: underline;">aranya plein air</a>, 2023</p>
+                  <p>andrea long chu, <a href="https://www.are.na/block/25966066" target="_blank" style="color: blue; text-decoration: underline;">females</a>, 2019</p>
                   <p>&nbsp;</p>`,
     images: [
       "images/image.png",
@@ -22,35 +19,33 @@ const archive = [
   {
     col1: "the great white erection",
     col2: "2025",
-    col3: "audio/visual, p5.js",
-    col4: "web-based, uv printing",
+    col3: "p5.js, ableton, uv printing",
+    col4: "web-based, publication",
     col5: "in-progress",
-    description: `<p>project description here</p>
+    description: `<p>project description here -> link sound</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
-                  <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
-                  <p>skepta, <a href="https://www.youtube.com/watch?v=rC-J4x-oTto" target="_blank" style="color: blue; text-decoration: underline;">#skeptacore pt.2</a>, 2023</p>
-                  <p>ryoji ikeda, <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" style="color: blue; text-decoration: underline;">datamatics</a>, 2006</p>
-                  <p>transwhite studio, <a href="https://tokyotypedirectorsclub.org/en/award/2024_tdc_03/" target="_blank" style="color: blue; text-decoration: underline;">aranya plein air</a>, 2023</p>
+                  <p>gloria e. anzaldúa, <a href="https://likeawhisper.wordpress.com/wp-content/uploads/2010/03/anzaldua-now-let-us-shift.pdf" target="_blank" style="color: blue; text-decoration: underline;">light in the dark, chapter 6</a>, 2016</p>
+                  <p>zoë soﬁa, <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a>, 2000</p>
+                  <p>london's screen archives, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the hammersmith flyover, hammersmith</a>, 1961</p>
+                  <p>yoko ono, john lennon, <a href="https://www.moma.org/collection/works/131418" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/thegreatwhiteerection/",
-      "images/image.png"
+      "images/thegreatwhiteerection/thegreatwhiteerection.png"
     ]
   },
   {
     col1: "electronic superhighway",
     col2: "2025",
-    col3: "p5.js",
-    col4: "web-based, typography",
+    col3: "p5.js, ableton",
+    col4: "web-based",
     col5: "in-progress",
-    description: `<p>#surveillancecore pt.01 is an interactive installation made in collaboration with <a href="https://www.linkedin.com/in/hannah-ogawa-9931ab303/" target="_blank" style="color: blue; text-decoration: underline;"><u>hannah ogawa</u></a>. the camera is coded to track people's faces and detect their emotions. by transforming personal interactions into data, the installation prompts viewers to reflect on surveillance technology and its capability to blur the boundaries between connection and control. it invites critical examination of privacy, agency, and the ethics of observation in the digital age.</p>
+    description: `<p>project description here -> link sound</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
-                  <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
-                  <p>skepta, <a href="https://www.youtube.com/watch?v=rC-J4x-oTto" target="_blank" style="color: blue; text-decoration: underline;">#skeptacore pt.2</a>, 2023</p>
-                  <p>ryoji ikeda, <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" style="color: blue; text-decoration: underline;">datamatics</a>, 2006</p>
-                  <p>transwhite studio, <a href="https://tokyotypedirectorsclub.org/en/award/2024_tdc_03/" target="_blank" style="color: blue; text-decoration: underline;">aranya plein air</a>, 2023</p>
+                  <p>ryoji ikeda, <a href="https://www.180studios.com/data-cosm" target="_blank" style="color: blue; text-decoration: underline;">data-cosm [nº1]</a>, 2023</p>
+                  <p>ai weiwei, <a href="https://en.wikipedia.org/wiki/Human_Flow" target="_blank" style="color: blue; text-decoration: underline;">human flow</a>, 2017</p>
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
