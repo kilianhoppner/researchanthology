@@ -28,7 +28,7 @@ const archive = [
                   <p>gloria e. anzaldúa, <a href="https://likeawhisper.wordpress.com/wp-content/uploads/2010/03/anzaldua-now-let-us-shift.pdf" target="_blank" style="color: blue; text-decoration: underline;">light in the dark, chapter 6</a>, 2016</p>
                   <p>zoë soﬁa, <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a>, 2000</p>
                   <p>london's screen archives, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the hammersmith flyover, hammersmith</a>, 1961</p>
-                  <p>yoko ono, john lennon, <a href="https://www.moma.org/collection/works/131418" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
+                  <p>yoko ono, john lennon, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/thegreatwhiteerection/",
@@ -49,7 +49,7 @@ const archive = [
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
-      "images/image.png"
+      "iframe:https://kilianhoppner.github.io/3dspring/"
     ]
   },
   {
