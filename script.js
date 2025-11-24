@@ -10,6 +10,7 @@ const archive = [
                   <p>&nbsp;</p>
                   <p>//references</p>
                   <p>andrea long chu, <a href="https://www.are.na/block/25966066" target="_blank" style="color: blue; text-decoration: underline;">females</a>, 2019</p>
+                  <p>zoë soﬁa, <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a>, 2000</p>
                   <p>&nbsp;</p>`,
     images: [
       "images/image.png",
@@ -25,14 +26,16 @@ const archive = [
     description: `<p>project description here -> link sound</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
-                  <p>gloria e. anzaldúa, <a href="https://likeawhisper.wordpress.com/wp-content/uploads/2010/03/anzaldua-now-let-us-shift.pdf" target="_blank" style="color: blue; text-decoration: underline;">light in the dark, chapter 6</a>, 2016</p>
-                  <p>zoë soﬁa, <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a>, 2000</p>
                   <p>london's screen archives, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the hammersmith flyover, hammersmith</a>, 1961</p>
+                  <p>do ho suh, <a href="https://www.itsnicethat.com/news/do-ho-suh-bridging-homes-art-260918" target="_blank" style="color: blue; text-decoration: underline;">bridging home</a>, 2018</p>
+                  <p>gloria e. anzaldúa, <a href="https://likeawhisper.wordpress.com/wp-content/uploads/2010/03/anzaldua-now-let-us-shift.pdf" target="_blank" style="color: blue; text-decoration: underline;">light in the dark, chapter 6</a>, 2016</p>
                   <p>yoko ono, john lennon, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
                   <p>&nbsp;</p>`,
     images: [
+      "images/thegreatwhiteerection/thegreatwhiteerection.png",
       "iframe:https://kilianhoppner.github.io/thegreatwhiteerection/",
-      "images/thegreatwhiteerection/thegreatwhiteerection.png"
+      "iframe:https://kilianhoppner.github.io/3dspring/"
+      
     ]
   },
   {
@@ -41,7 +44,7 @@ const archive = [
     col3: "p5.js, ableton",
     col4: "web-based",
     col5: "in-progress",
-    description: `<p>this project visualises the international organisation for migration's (iom) dtm sudan displacement data from the report dated 30 september 2025 in a text-based interactive table. it shows each state of displacement, state codes, the number of idps and households, the percentage of sudanese nationals, and a breakdown by state of origin. -> link sound</p>
+    description: `<p>this project visualises the international organisation for migration's (iom) dtm sudan displacement data from 30 september 2025. it depicts the movement of internally displaced persons (idps) between states, showing the origin and destination of populations. shortcuts: (h)hide, (l)line, (e)export.</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
                   <p>international organisation for migration (iom), <a href="https://dtm.iom.int/sudan" target="_blank" style="color: blue; text-decoration: underline;">dtm sudan report</a>, 2025</p>
@@ -50,7 +53,7 @@ const archive = [
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
-      "iframe:https://kilianhoppner.github.io/3dspring/"
+      
     ]
   },
   {
@@ -86,7 +89,7 @@ const archive = [
                   <p>julinka ebhardt, francesco tacchini, will yates-johnson, <a href="https://vimeo.com/87979136" target="_blank" style="color: blue; text-decoration: underline;">space replay</a>, 2014</p>
                   <p>john warwicker, <a href="https://www.johnwarwicker.com/sony-connected-identity-1/ez6vgi16gtvobpccjsmq013z90rru2" target="_blank" style="color: blue; text-decoration: underline;">sony connected identity</a>, 2001</p>
                   <p>&nbsp;</p>`,
-    images: ["images/theweatherroom/theweatherroom01.png", "images/theweatherroom/theweatherroom02.png"]
+    images: ["images/theweatherroom/theweatherroom01.png", "images/theweatherroom/theweatherroom02.png", "images/theweatherroom/theweatherroom03.png" ]
   }
 ];
 
@@ -99,6 +102,7 @@ const expandedStates = Object.fromEntries(archive.map(e => [e.col1, false]));
 // ---------- helper: create media cell ----------
 function createMediaCell(mediaValue, idx) {
   const td = document.createElement('td');
+  td.classList.add("media-cell");   // <— add this
   td.style.verticalAlign = 'top';
   const wrapper = document.createElement('div');
   wrapper.className = 'img-container';
@@ -172,6 +176,7 @@ function renderTable() {
         ${entry.col5.toLowerCase() === 'in-progress' ? '<span class="status-dot"></span>' : ''}
       </td>
       <td></td>
+      <td></td> <!-- NEW 7th column -->
     `;
     row.addEventListener('click', () => {
       expandedStates[entry.col1] = !expandedStates[entry.col1];
@@ -193,8 +198,11 @@ function renderTable() {
 
     const m0 = createMediaCell(entry.images?.[0], 1);
     const m1 = createMediaCell(entry.images?.[1], 2);
+    const m2 = createMediaCell(entry.images?.[2], 3); // NEW 3rd image → 7th column
+    
     descRow.appendChild(m0);
     descRow.appendChild(m1);
+    descRow.appendChild(m2);
 
     tableBody.appendChild(descRow);
   });
@@ -223,3 +231,4 @@ toggleAllBtn.addEventListener('click', () => {
 
 // initial render
 renderTable();
+
