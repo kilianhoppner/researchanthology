@@ -1,35 +1,22 @@
 // ---------- data ----------
 const archive = [
   {
-    col1: "eve+testosterone=adam (datalove)",
-    col2: "2025",
-    col3: "p5.js, writing",
-    col4: "web-based, publication",
-    col5: "in-progress",
-    description: `<p>project description here</p>
-                  <p>&nbsp;</p>
-                  <p>//references</p>
-                  <p>andrea long chu, <a href="https://www.are.na/block/25966066" target="_blank" style="color: blue; text-decoration: underline;">females</a>, 2019</p>
-                  <p>zoë soﬁa, <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a>, 2000</p>
-                  <p>&nbsp;</p>`,
-    images: [
-      "images/image.png",
-      "images/image.png"
-    ]
-  },
-  {
     col1: "the great white erection",
     col2: "2025",
     col3: "p5.js, ableton, uv printing",
     col4: "web-based, publication",
     col5: "in-progress",
-    description: `<p>project description here -> link sound</p>
+    description: `<p>in october, i started studying the 622-metre hammersmith flyover. the elevated structure carries the a4 road over a busy central junction in the borough of hammersmith. it was built in 1961 by white, male individuals, pushing and pulling equipment in an <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">erotic dance</a> of construction work. the flyover is composed of a continuous hollow spine beam, 26 feet wide, with arms to support the outer carriageways. a hollow interior runs the whole length of the structure, accommodating surface drainage, electricity supply, and a water main feeding fire hydrants above. its slender and elegant lines, along with its self-regulating functions, make it impossible to view as passive or unintelligent. instead, it emerges as a dynamic, (female) entity intricately tied to its environment, its identity inscribed by the powerful white men who built it.</p>
+                  <p>&nbsp;</p>
+                  <p>at night, i hear cars passing over the flyover. i wonder where people are going so late. i ask myself if my interest in <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a> is a compensation for my own relative deficiency in the container department. upon waking, i salute the flyover along with the rising sun. it never rests. its automated systems ensure a 24-hour facilitating environment to meet the demands of our metropolis. similar to mothers, who nurture and provide for their infants. i can tell the structure is worn down. rust and other imperfections have quietly settled onto its membrane. perhaps, being porous enables intimacy with its surroundings. can its embrace help me better understand my sexuality or reconcile the relationship with my father? more broadly, does perceiving architecture as an extension of our skin challenge views of gender roles? i use binary code (0s and 1s) to probe these questions, exposing the downfalls of societal binaries, and offer ways to bridge the gaps.</p>      
                   <p>&nbsp;</p>
                   <p>//references</p>
                   <p>london's screen archives, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the hammersmith flyover, hammersmith</a>, 1961</p>
                   <p>do ho suh, <a href="https://www.itsnicethat.com/news/do-ho-suh-bridging-homes-art-260918" target="_blank" style="color: blue; text-decoration: underline;">bridging home</a>, 2018</p>
                   <p>gloria e. anzaldúa, <a href="https://likeawhisper.wordpress.com/wp-content/uploads/2010/03/anzaldua-now-let-us-shift.pdf" target="_blank" style="color: blue; text-decoration: underline;">light in the dark, chapter 6</a>, 2016</p>
-                  <p>yoko ono, john lennon, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
+                  <p>andrea long chu, <a href="https://www.are.na/block/25966066" target="_blank" style="color: blue; text-decoration: underline;">females</a>, 2019</p>
+                  <p>zoë soﬁa, <a href="https://www.researchgate.net/publication/227700296_Container_Technologies" target="_blank" style="color: blue; text-decoration: underline;">container technologies</a>, 2000</p>
+                  <p>serpentine galleries, <a href="https://open.spotify.com/episode/1C7PSJMVpnrXkKiJ0JwTDb?si=pQewpY9JT6yCapEy2Jsl3A" target="_blank" style="color: blue; text-decoration: underline;">intimacies: surroundings</a>, 2023</p>
                   <p>&nbsp;</p>`,
     images: [
       "images/thegreatwhiteerection/thegreatwhiteerection.png",
@@ -44,12 +31,13 @@ const archive = [
     col3: "p5.js, ableton",
     col4: "web-based",
     col5: "in-progress",
-    description: `<p>this project visualises the international organisation for migration's (iom) dtm sudan displacement data from 30 september 2025. it depicts the movement of internally displaced persons (idps) between states, showing the origin and destination of populations. shortcuts: (h)hide, (l)line, (e)export.</p>
+    description: `<p>an animation that visualises the international organisation for migration's (iom) dtm sudan displacement data from 30 september 2025. it depicts the movement of internally displaced persons (idps) between states, showing the origin and destination of populations. keyboard shortcuts: (h)hide, (l)line, (e)export.</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
                   <p>international organisation for migration (iom), <a href="https://dtm.iom.int/sudan" target="_blank" style="color: blue; text-decoration: underline;">dtm sudan report</a>, 2025</p>
                   <p>ryoji ikeda, <a href="https://www.180studios.com/data-cosm" target="_blank" style="color: blue; text-decoration: underline;">data-cosm [nº1]</a>, 2023</p>
                   <p>ai weiwei, <a href="https://en.wikipedia.org/wiki/Human_Flow" target="_blank" style="color: blue; text-decoration: underline;">human flow</a>, 2017</p>
+                  <p>yoko ono, john lennon, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
@@ -58,11 +46,11 @@ const archive = [
   },
   {
     col1: "#surveillancecore pt.01",
-    col2: "2025",
+    col2: "2024",
     col3: "p5.js",
     col4: "interactive installation",
     col5: "completed",
-    description: `<p>#surveillancecore pt.01 is an interactive installation made in collaboration with <a href="https://www.linkedin.com/in/hannah-ogawa-9931ab303/" target="_blank" style="color: blue; text-decoration: underline;"><u>hannah ogawa</u></a>. the camera is coded to track people's faces and detect their emotions. by transforming personal interactions into data, the installation prompts viewers to reflect on surveillance technology and its capability to blur the boundaries between connection and control. it invites critical examination of privacy, agency, and the ethics of observation in the digital age.</p>
+    description: `<p>#surveillancecore pt.01 is an interactive installation made in collaboration with <a href="https://www.linkedin.com/in/hannah-ogawa-9931ab303/" target="_blank" style="color: blue; text-decoration: underline;"><u>hannah ogawa</u></a>. the camera in fig.01 is coded to track people's faces and detect their emotions. by transforming personal interactions into data, the installation prompts viewers to reflect on surveillance technology and its capability to blur boundaries between connection and control. it invites critical examination of privacy, agency, and the ethics of observation in the digital age.</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
                   <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
@@ -72,7 +60,7 @@ const archive = [
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/surveillancecore-pt.1/",
-      "images/surveillancecorept.01/surveillancecorept.01.png"
+      "images/surveillancecorept.01/motiontracking.gif"
     ]
   },
   {
