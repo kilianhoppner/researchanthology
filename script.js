@@ -42,6 +42,7 @@ const archive = [
                   <p>gloria e. anzaldúa, <a href="https://likeawhisper.wordpress.com/wp-content/uploads/2010/03/anzaldua-now-let-us-shift.pdf" target="_blank" style="color: blue; text-decoration: underline;">light in the dark, chapter 6</a>, 2016</p>
                   <p>yoko ono, john lennon, <a href="https://www.londonsscreenarchives.org.uk/title/19773/" target="_blank" style="color: blue; text-decoration: underline;">the war is over!</a>, 1969</p>
                   <p>charlotte lengersdorf, <a href="https://charlottelengersdorf.com/index.html" target="_blank" style="color: blue; text-decoration: underline;">text/dance editor: writing choreography</a>, 2025</p>
+                  <p>bruno munari, <a href="http://imagineallthepeople.info/Munari-1966-Design-as-art.pdf" target="_blank" style="color: blue; text-decoration: underline;">design as art</a>, 1966</p>
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
@@ -61,11 +62,10 @@ const archive = [
                   <p>nam june paik, <a href="https://www.artgallery.nsw.gov.au/collection/works/342.2011.a-f/" target="_blank" style="color: blue; text-decoration: underline;">tv buddha</a>, 1976</p>
                   <p>skepta, <a href="https://www.youtube.com/watch?v=rC-J4x-oTto" target="_blank" style="color: blue; text-decoration: underline;">#skeptacore pt.2</a>, 2023</p>
                   <p>ryoji ikeda, <a href="https://www.ryojiikeda.com/project/datamatics/" target="_blank" style="color: blue; text-decoration: underline;">datamatics</a>, 2006</p>
-                  <p>transwhite studio, <a href="https://tokyotypedirectorsclub.org/en/award/2024_tdc_03/" target="_blank" style="color: blue; text-decoration: underline;">aranya plein air</a>, 2023</p>
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/surveillancecore-pt.1/",
-      "images/surveillancecorept.01/motiontracking.gif",
+      "images/surveillancecorept.01/surveillancecorept.01.png",
       "images/surveillancecorept.01/surveillancecorept.01_03.png"
     ]
   },
