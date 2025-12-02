@@ -245,3 +245,22 @@ document.addEventListener("click", function (e) {
     document.querySelectorAll('img.thumb-img.fullscreen-img').forEach(i => i.classList.remove('fullscreen-img'));
   }
 });
+
+
+
+
+// ---------- KEYBOARD FULLSCREEN TOGGLE ----------
+document.addEventListener('keydown', function (e) {
+  // Only trigger on 'F' or 'f'
+  if (e.key.toLowerCase() === 'f') {
+    try {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen?.().catch(() => {});
+      } else {
+        document.exitFullscreen?.().catch(() => {});
+      }
+    } catch (err) {
+      // silently ignore errors
+    }
+  }
+});
