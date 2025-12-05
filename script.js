@@ -18,11 +18,12 @@ const archive = [
                   <p>serpentine galleries, <a href="https://open.spotify.com/episode/1C7PSJMVpnrXkKiJ0JwTDb?si=pQewpY9JT6yCapEy2Jsl3A" target="_blank" style="color: blue; text-decoration: underline;">intimacies: surroundings</a>, 2023</p>
                   <p>martin heidegger, <a href="https://frontdeskapparatus.com/wp/wp-content/uploads/2012/10/Building-Dwelling-Thinking.pdf" target="_blank" style="color: blue; text-decoration: underline;">building dwelling thinking</a>, 1954</p>
                   <p>&nbsp;</p>`,
-    images: [
-      "images/thegreatwhiteerection/thegreatwhiteerection.png",
-      "iframe:https://kilianhoppner.github.io/thegreatwhiteerection/",
-      "iframe:https://kilianhoppner.github.io/3dspring/"
-      
+      images: [
+        "images/thegreatwhiteerection/thegreatwhiteerection.png",
+        "iframe:https://kilianhoppner.github.io/thegreatwhiteerection/",
+        "iframe:https://kilianhoppner.github.io/3dspring/",
+        "images/thegreatwhiteerection/thegreatwhiteerection02.png"
+        
     ]
   },
   {
@@ -31,11 +32,11 @@ const archive = [
     col3: "p5.js, ableton",
     col4: "web-based",
     col5: "in-progress",
-    description: `<p>electronic superhighway is a term coined in 1974 by video art pioneer <a href="https://en.wikipedia.org/wiki/Nam_June_Paik" target="_blank" style="color: blue; text-decoration: underline;">nam june paik</a>. it forecasts technology’s ability to disseminate information and form global connections. using this notion as a starting point, i conduct a series of experiments alluding to: algorithms, information extraction, data as material, digital ecosystems as contested marketplaces etc., in an attempt to understand the fabric that holds together our communication networks.</p>
+    description: `<p>electronic superhighway is a term coined in 1974 by video art pioneer <a href="https://en.wikipedia.org/wiki/Nam_June_Paik" target="_blank" style="color: blue; text-decoration: underline;">nam june paik</a>. it forecasts technology's ability to disseminate information and form global connections. using this notion as a starting point, i conduct a series of experiments alluding to: algorithms, information extraction, data as material, digital ecosystems as contested marketplaces etc., in an attempt to understand the fabric that holds together our communication networks.</p>
                   <p>&nbsp;</p>
                   <p> [fig.01] visualises the international organisation for migration's (iom) dtm sudan displacement data from 30 september 2025. it depicts the movement of internally displaced persons (idps) between states, showing the origin and destination of populations. keyboard shortcuts: (h)hide map, (l)line, (e)export.</p>
                   <p>&nbsp;</p>
-                  <p>[fig.02] uses ml5.js’ body pose model to examine positionality (x, y). where do we situate in space and how to create connections with things? the intervention of technology is inevitable and will increasingly impact the way we engage with the world (or not). keyboard shortcuts: (h)hide lines, (b)black background.</p>
+                  <p>[fig.02] uses ml5.js' body pose model to examine positionality (x, y). where do we situate in space and how to create connections with things? the intervention of technology is inevitable and will increasingly impact the way we engage with the world (or not). keyboard shortcuts: (h)hide lines, (b)black background.</p>
                   <p>&nbsp;</p>
                   <p>//references</p>
                   <p>international organisation for migration (iom), <a href="https://dtm.iom.int/sudan" target="_blank" style="color: blue; text-decoration: underline;">dtm sudan report</a>, 2025</p>
@@ -48,7 +49,8 @@ const archive = [
                   <p>&nbsp;</p>`,
     images: [
       "iframe:https://kilianhoppner.github.io/ELECTRONICSUPERHIGHWAY-MAP/",
-      "iframe:https://kilianhoppner.github.io/bodyskeleton/"
+      "iframe:https://kilianhoppner.github.io/bodyskeleton/",
+      "iframe:https://kilianhoppner.github.io/facemesh/"
       
     ]
   },
@@ -85,7 +87,11 @@ const archive = [
                   <p>julinka ebhardt, francesco tacchini, will yates-johnson, <a href="https://vimeo.com/87979136" target="_blank" style="color: blue; text-decoration: underline;">space replay</a>, 2014</p>
                   <p>john warwicker, <a href="https://www.johnwarwicker.com/sony-connected-identity-1/ez6vgi16gtvobpccjsmq013z90rru2" target="_blank" style="color: blue; text-decoration: underline;">sony connected identity</a>, 2001</p>
                   <p>&nbsp;</p>`,
-    images: ["images/theweatherroom/theweatherroom01.png", "images/theweatherroom/theweatherroom02.png", "images/theweatherroom/theweatherroom03.png" ]
+    images: [
+    "images/theweatherroom/theweatherroom01.png", 
+    "images/theweatherroom/theweatherroom02.png", 
+    "images/theweatherroom/theweatherroom03.png"
+  ]
   }
 ];
 
@@ -95,14 +101,11 @@ const toggleAllBtn = document.getElementById('toggleAll');
 let allExpanded = false;
 const expandedStates = Object.fromEntries(archive.map(e => [e.col1, false]));
 
-// ---------- helper: create media cell ----------
-function createMediaCell(mediaValue, idx) {
-  const td = document.createElement('td');
-  td.classList.add("media-cell");   // <— add this
-  td.style.verticalAlign = 'top';
+// ---------- helper: create media element (not cell) ----------
+function createMediaElement(mediaValue, idx) {
   const wrapper = document.createElement('div');
   wrapper.className = 'img-container';
-  td.appendChild(wrapper);
+  wrapper.style.marginBottom = 'calc(var(--cell-pad-h) * 2)';
 
   if (!mediaValue) {
     const img = document.createElement('img');
@@ -110,18 +113,17 @@ function createMediaCell(mediaValue, idx) {
     img.alt = `project image ${idx}`;
     img.src = 'images/image.png';
     wrapper.appendChild(img);
-    return td;
+    return wrapper;
   }
 
   if (typeof mediaValue === 'string' && mediaValue.startsWith('iframe:')) {
     const url = mediaValue.slice('iframe:'.length);
 
-    // responsive wrapper (intrinsic ratio)
     const ar = document.createElement('div');
     ar.style.position = 'relative';
     ar.style.width = '100%';
     ar.style.maxWidth = '800px';
-    ar.style.paddingTop = '65.125%'; // 521 / 800 * 100%
+    ar.style.paddingTop = '65.125%';
     ar.style.overflow = 'hidden';
 
     const iframe = document.createElement('iframe');
@@ -140,12 +142,12 @@ function createMediaCell(mediaValue, idx) {
 
     ar.appendChild(iframe);
     wrapper.appendChild(ar);
-    return td;
+    return wrapper;
   }
 
   if (typeof mediaValue === 'string' && mediaValue.trim().startsWith('<iframe')) {
     wrapper.innerHTML = mediaValue;
-    return td;
+    return wrapper;
   }
 
   const img = document.createElement('img');
@@ -153,6 +155,31 @@ function createMediaCell(mediaValue, idx) {
   img.alt = `project image ${idx}`;
   img.src = mediaValue;
   wrapper.appendChild(img);
+  return wrapper;
+}
+
+// ---------- create stacked media cell ----------
+function createStackedMediaCell(images, startIdx) {
+  const td = document.createElement('td');
+  td.classList.add("media-cell");
+  td.style.verticalAlign = 'top';
+  
+  const container = document.createElement('div');
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.style.gap = '0';
+  
+  // Add first image (e.g., image 0 for column 5)
+  if (images[startIdx]) {
+    container.appendChild(createMediaElement(images[startIdx], startIdx + 1));
+  }
+  
+  // Add second image (e.g., image 3 for column 5)
+  if (images[startIdx + 3]) {
+    container.appendChild(createMediaElement(images[startIdx + 3], startIdx + 4));
+  }
+  
+  td.appendChild(container);
   return td;
 }
 
@@ -172,7 +199,7 @@ function renderTable() {
         ${entry.col5.toLowerCase() === 'in-progress' ? '<span class="status-dot"></span>' : ''}
       </td>
       <td></td>
-      <td></td> <!-- NEW 7th column -->
+      <td></td>
     `;
     row.addEventListener('click', () => {
       expandedStates[entry.col1] = !expandedStates[entry.col1];
@@ -180,6 +207,7 @@ function renderTable() {
     });
     tableBody.appendChild(row);
 
+    // Description row with stacked images in columns 5, 6, 7
     const descRow = document.createElement('tr');
     descRow.className = 'description-row';
     descRow.id = `desc-${entry.col1}`;
@@ -192,13 +220,14 @@ function renderTable() {
     descTd.innerHTML = entry.description || '';
     descRow.appendChild(descTd);
 
-    const m0 = createMediaCell(entry.images?.[0], 1);
-    const m1 = createMediaCell(entry.images?.[1], 2);
-    const m2 = createMediaCell(entry.images?.[2], 3); // NEW 3rd image → 7th column
+    // Column 5: images 0 and 3 stacked
+    descRow.appendChild(createStackedMediaCell(entry.images || [], 0));
     
-    descRow.appendChild(m0);
-    descRow.appendChild(m1);
-    descRow.appendChild(m2);
+    // Column 6: images 1 and 4 stacked
+    descRow.appendChild(createStackedMediaCell(entry.images || [], 1));
+    
+    // Column 7: images 2 and 5 stacked
+    descRow.appendChild(createStackedMediaCell(entry.images || [], 2));
 
     tableBody.appendChild(descRow);
   });
@@ -215,7 +244,7 @@ function updateRows() {
     }
   });
   allExpanded = archive.every(e => expandedStates[e.col1]);
-  toggleAllBtn.textContent = allExpanded ? '—' : '+';
+  toggleAllBtn.classList.toggle('expanded', allExpanded);
 }
 
 // ---------- toggle all ----------
@@ -228,30 +257,21 @@ toggleAllBtn.addEventListener('click', () => {
 // initial render
 renderTable();
 
-
-
-// ---------- IMAGE FULLSCREEN TOGGLE (click anywhere to close) ----------
+// ---------- IMAGE FULLSCREEN TOGGLE ----------
 document.addEventListener("click", function (e) {
   const img = e.target.closest("img.thumb-img");
 
   if (img) {
-    // If the clicked thumbnail is already fullscreen, close it.
-    // Otherwise, close any other fullscreen images then open this one.
     const wasFullscreen = img.classList.contains('fullscreen-img');
     document.querySelectorAll('img.thumb-img.fullscreen-img').forEach(i => i.classList.remove('fullscreen-img'));
     if (!wasFullscreen) img.classList.add('fullscreen-img');
   } else {
-    // Clicked somewhere else on the document — close all fullscreen images.
     document.querySelectorAll('img.thumb-img.fullscreen-img').forEach(i => i.classList.remove('fullscreen-img'));
   }
 });
 
-
-
-
 // ---------- KEYBOARD FULLSCREEN TOGGLE ----------
 document.addEventListener('keydown', function (e) {
-  // Only trigger on 'F' or 'f'
   if (e.key.toLowerCase() === 'f') {
     try {
       if (!document.fullscreenElement) {

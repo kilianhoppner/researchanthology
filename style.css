@@ -25,7 +25,7 @@
   --bg-page: #f7f7f7;
   --bg-header: transparent;
   --text-color: #000000;
-  --hover-color: #dddddd;
+  --hover-color: #d8d8d8;
 
   --header-line: 0.14em solid #000;
   --row-line: 0.0625em solid #000;
@@ -374,3 +374,85 @@ img.thumb-img {
   box-shadow: 0 0 0 rgba(0,0,0,0);     /* no unexpected visual changes */
 }
 
+
+
+/* Make user text selection use the same highlight color */
+::selection {
+  background: #000;     /* keep contrast (you can change if you prefer) */
+  color: #f7f7f7;
+}
+
+
+
+
+
+/* ---------- Toggle Hyphen Icon (individual centre rotation) ---------- */
+
+.toggle-all {
+  cursor: pointer;
+  user-select: none;
+  z-index: 9999;
+  background: transparent;
+  position: absolute;     /* NEW — makes the hitbox a positioning container */
+  width: 18px;            /* NEW — hitbox width */
+  height: 18px;           /* NEW — hitbox height */
+}
+
+/* container for the 4 hyphens */
+.toggle-all .hyphens {
+  position: absolute;     /* was relative — must be absolute for a fixed area */
+  top: -21px;             /* keep your manual offsets */
+  left: 0px;
+  width: 18px;            /* NEW — ensures the spans remain positioned correctly */
+  height: 18px;
+}
+
+/* each hyphen */
+.toggle-all .hyphens span {
+  position: absolute;
+  width: 6.5px;
+  height: 1.5px;
+  background: currentColor;
+  transform-origin: center center;
+  /* slower + smoother: only animate transform (no top/left) and use a softer bezier */
+  transition: transform 1000ms cubic-bezier(.1,.9,.35,1);
+  will-change: transform;             /* performance hint */
+  backface-visibility: hidden;        /* avoids subtle flicker on some devices */
+  display: block;
+}
+
+/* initial positions (four corners of a small square) */
+.toggle-all .hyphens span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+  left: calc(50% - 5px);
+  top: calc(50% - 5px);
+}
+.toggle-all .hyphens span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(0deg);
+  left: calc(50% + 5px);
+  top: calc(50% - 5px);
+}
+.toggle-all .hyphens span:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(0deg);
+  left: calc(50% - 5px);
+  top: calc(50% + 5px);
+}
+.toggle-all .hyphens span:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(0deg);
+  left: calc(50% + 5px);
+  top: calc(50% + 5px);
+}
+
+/* Expanded state: rotate each hyphen 90deg about its own center only */
+.toggle-all.expanded .hyphens span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.toggle-all.expanded .hyphens span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.toggle-all.expanded .hyphens span:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.toggle-all.expanded .hyphens span:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
