@@ -376,6 +376,7 @@ img.thumb-img {
 
 
 
+
 /* Make user text selection use the same highlight color */
 ::selection {
   background: #000;     /* keep contrast (you can change if you prefer) */
@@ -456,3 +457,6 @@ img.thumb-img {
 .toggle-all.expanded .hyphens span:nth-child(4) {
   transform: translate(-50%, -50%) rotate(90deg);
 }
+
+
+
