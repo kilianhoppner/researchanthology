@@ -146,6 +146,7 @@ thead {
   top: var(--sticky-offset);
   z-index: 2;
   background: none;
+  transform: translateZ(0); /* ← ADD THIS LINE */
 }
 
 /* Main table headers */
@@ -174,7 +175,7 @@ thead::after {
   bottom: 0;
   height: 0.1em;
   background: #000;
-  z-index: 3;
+  z-index: 10;
   pointer-events: none;
 }
 
