@@ -140,14 +140,6 @@ table {
   text-decoration: underline;
 }
 
-/* Make the THEAD itself sticky */
-thead {
-  position: sticky;
-  top: var(--sticky-offset);
-  z-index: 2;
-  background: none;
-  transform: translateZ(0); /* ← ADD THIS LINE */
-}
 
 /* Main table headers */
 thead th {
@@ -166,47 +158,18 @@ thead th {
   text-overflow: ellipsis;
 }
 
-/* Draw ONE continuous sticky line under the header row */
-thead::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 0.1em;
-  background: #000;
-  z-index: 10;
-  pointer-events: none;
-}
 
-/* Small vertical ticks */
-thead tr th::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: var(--tick-width);
-  height: var(--tick-height);
-  background: #000;
-  z-index: 6;
-}
 
-thead tr th:last-child::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: var(--tick-width);
-  height: var(--tick-height);
-  background: #000;
-  z-index: 6;
-}
 
 /* =========================
    TABLE BODY (main data table only)
 ========================= */
 .data-table tbody tr:not(.description-row) td {
   border-bottom: var(--row-line);
+}
+
+.data-table tbody tr:first-child td {
+  border-top: var(--row-line);
 }
 
 .data-table tbody tr:not(.description-row):hover td {
