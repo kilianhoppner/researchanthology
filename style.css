@@ -28,11 +28,7 @@
   --hover-color: #d8d8d8;
 
   --header-line: 0.14em solid #000;
-  --row-line: 0.0625em solid #000;
-
-  --tick-width: 0.14em;
-  --tick-height: 0.8em;
-  --sticky-offset: 0.625em;
+  --row-line: 0.1em solid #000;
 }
 
 /* =========================
